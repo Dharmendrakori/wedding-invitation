@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lokesh & Varsha | Save The Date</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:radial-gradient(circle at center, #7a0000, #2a0000);
+    font-family:'Playfair Display', serif;
+    overflow:hidden;
+    color:#f8e6c1;
+    animation:zoomBg 15s ease-in-out infinite alternate;
+}
+
+@keyframes zoomBg{
+    from{background-size:100%;}
+    to{background-size:110%;}
+}
+
+/* Golden sparkles */
+.sparkle{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:#d4af37;
+    border-radius:50%;
+    animation:twinkle 3s infinite ease-in-out;
+    opacity:0.6;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:0.2;}
+    50%{opacity:1;}
+}
+
+.card{
+    position:relative;
+    width:90%;
+    max-width:850px;
+    padding:60px 40px;
+    background:rgba(0,0,0,0.6);
+    border:2px solid #d4af37;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 50px rgba(212,175,55,0.5);
+    animation:fadeIn 2s ease forwards;
+    opacity:0;
+}
+
+@keyframes fadeIn{
+    to{opacity:1;}
+}
+
+/* Ganesha intro glow */
+.ganesha{
+    width:90px;
+    margin-bottom:15px;
+    animation:glow 3s ease-in-out infinite;
+}
+
+@keyframes glow{
+    0%,100%{filter:drop-shadow(0 0 5px gold);}
+    50%{filter:drop-shadow(0 0 20px gold);}
+}
+
+.save{
+    letter-spacing:5px;
+    font-size:14px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+    opacity:0;
+    animation:reveal 2s forwards;
+    animation-delay:1s;
+}
+
+.names{
+    font-family:'Great Vibes', cursive;
+    font-size:60px;
+    color:#d4af37;
+    margin:15px 0;
+    opacity:0;
+    animation:reveal 2s forwards;
+    animation-delay:2s;
+}
+
+.divider{
+    width:140px;
+    height:2px;
+    background:#d4af37;
+    margin:25px auto;
+    opacity:0;
+    animation:reveal 2s forwards;
+    animation-delay:2.5s;
+}
+
+.event{
+    font-size:17px;
+    margin:5px 0;
+    opacity:0;
+    animation:reveal 1.5s forwards;
+}
+
+.event:nth-child(5){animation-delay:3s;}
+.event:nth-child(6){animation-delay:3.3s;}
+.event:nth-child(7){animation-delay:3.6s;}
+.event:nth-child(8){animation-delay:3.9s;}
+.event:nth-child(9){animation-delay:4.2s;}
+
+.venue{
+    margin-top:20px;
+    font-size:18px;
+    opacity:0;
+    animation:reveal 2s forwards;
+    animation-delay:4.5s;
+}
+
+@keyframes reveal{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:768px){
+    .names{font-size:40px;}
+    .card{padding:30px 20px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- sparkles -->
+<div class="sparkle" style="top:10%;left:20%;"></div>
+<div class="sparkle" style="top:30%;left:80%;"></div>
+<div class="sparkle" style="top:70%;left:15%;"></div>
+<div class="sparkle" style="top:85%;left:60%;"></div>
+<div class="sparkle" style="top:50%;left:90%;"></div>
+
+<div class="card">
+
+    <img class="ganesha" src="./GaneshJi.png">
+
+    <div class="save">Save The Date</div>
+
+    <div class="names">Lokesh & Varsha</div>
+
+    <div class="divider"></div>
+
+    <div class="event"><strong>Haldi Ceremony</strong> – 10 March, 2026</div>
+    <div class="event"><strong>Mehendi</strong> – 10 March, 2026</div>
+    <div class="event"><strong>Sangeet</strong> – 10 March, 2026</div>
+    <div class="event"><strong>Wedding / Phere</strong> – 11 March, 2026</div>
+    <div class="event"><strong>Swaruchibhoj</strong> – 14 March, 2026</div>
+
+    <div class="divider"></div>
+
+    <div class="venue">
+        Tulsi Marriage Garden<br>
+        Patel Market, Sehore
+    </div>
+
+</div>
+
+</body>
+</html>

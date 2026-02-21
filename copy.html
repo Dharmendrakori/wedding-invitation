@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>लोकश एवं वर्षा | शुभ विवाह</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html,body{
+    height:100%;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:radial-gradient(circle at center, #8b0000 0%, #4b0000 60%, #2b0000 100%);
+    font-family:'Noto Serif Devanagari', serif;
+    overflow:hidden;
+    color:#f5d27a;
+    position:relative;
+}
+
+/* ===== Golden Shine ===== */
+body::after{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:linear-gradient(120deg, transparent 40%, rgba(255,215,0,0.06) 50%, transparent 60%);
+    animation:shine 12s linear infinite;
+}
+
+@keyframes shine{
+    from{transform:translate(-25%,-25%) rotate(0deg);}
+    to{transform:translate(-25%,-25%) rotate(360deg);}
+}
+
+/* ===== FIREWORKS ===== */
+.firework{
+    position:absolute;
+    width:8px;
+    height:8px;
+    background:gold;
+    border-radius:50%;
+    box-shadow:
+        0 -60px gold,
+        42px -42px gold,
+        60px 0 gold,
+        42px 42px gold,
+        0 60px gold,
+        -42px 42px gold,
+        -60px 0 gold,
+        -42px -42px gold;
+    animation:explode 2.5s infinite ease-out;
+    opacity:0;
+}
+
+.firework.left{
+    left:5%;
+    top:30%;
+}
+
+.firework.right{
+    right:5%;
+    top:60%;
+    animation-delay:1.2s;
+}
+
+@keyframes explode{
+    0%{
+        transform:scale(0.2);
+        opacity:1;
+    }
+    70%{
+        transform:scale(1);
+        opacity:1;
+    }
+    100%{
+        transform:scale(1.2);
+        opacity:0;
+    }
+}
+
+/* ===== CARD ===== */
+.card{
+    position:relative;
+    width:min(92vw, 800px);
+    height:min(94vh, 900px);
+    padding:clamp(20px, 4vh, 50px);
+    background:rgba(0,0,0,0.55);
+    border:2px solid gold;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 0 60px rgba(255,215,0,0.4);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ===== ROUND PHOTO ===== */
+.photo-wrapper{
+    position:relative;
+    width:clamp(120px, 18vh, 180px);
+    height:clamp(120px, 18vh, 180px);
+    margin-bottom:clamp(10px,2vh,20px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:float 4s ease-in-out infinite;
+}
+
+.photo-wrapper::before{
+    content:"";
+    position:absolute;
+    width:120%;
+    height:120%;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(255,215,0,0.5), transparent 70%);
+    animation:pulse 3s infinite ease-in-out;
+}
+
+.photo-wrapper::after{
+    content:"";
+    position:absolute;
+    width:110%;
+    height:110%;
+    border:3px solid gold;
+    border-radius:50%;
+}
+
+.couple-photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    z-index:2;
+    box-shadow:0 0 25px rgba(255,215,0,0.6);
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1);opacity:0.7;}
+    50%{transform:scale(1.1);opacity:1;}
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+}
+
+/* ===== TEXT ===== */
+.heading{
+    font-size:clamp(14px,2vh,18px);
+    margin-bottom:10px;
+}
+
+.names{
+    font-size:clamp(28px,5vh,56px);
+    margin:10px 0;
+    color:gold;
+}
+
+.divider{
+    width:clamp(80px,20%,140px);
+    height:2px;
+    background:gold;
+    margin:clamp(10px,2vh,20px) auto;
+}
+
+.details{
+    font-size:clamp(14px,2.2vh,20px);
+    line-height:1.6;
+}
+
+.venue{
+    margin-top:clamp(15px,2vh,25px);
+    font-size:clamp(15px,2.4vh,22px);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Fireworks -->
+<div class="firework left"></div>
+<div class="firework right"></div>
+
+<div class="card">
+
+    <div class="photo-wrapper">
+        <img src="./Together.png" class="couple-photo">
+    </div>
+
+    <div class="heading">शुभ विवाह</div>
+
+    <div class="names">लोकश ❤️ वर्षा</div>
+
+    <div class="divider"></div>
+
+    <div class="details">
+        हल्दी समारोह – 10 मार्च 2026<br>
+        मेहंदी – 10 मार्च 2026<br>
+        संगीत – 10 मार्च 2026<br>
+        विवाह / फेरे – 11 मार्च 2026<br>
+        स्वरुचिभोज – 14 मार्च 2026
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="venue">
+        तुलसी मैरिज गार्डन<br>
+        पटेल मार्केट, सीहोर
+    </div>
+
+</div>
+
+</body>
+</html>

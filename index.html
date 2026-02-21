@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokesh & Varsha Wedding</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #fef5f0 0%, #f4e4d7 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            width: 100%;
+            padding: 80px 20px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(244,228,216,0.8) 100%);
+            border-bottom: 2px solid rgba(200, 100, 150, 0.1);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero-ornament {
+            font-size: 32px;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .names {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #8b1a3e;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            animation: fadeInDown 1s ease-out 0.2s both;
+        }
+
+        .and-symbol {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
+            color: #c86496;
+            margin: 0 15px;
+            font-weight: 400;
+        }
+
+        .tagline {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            color: #999;
+            text-transform: uppercase;
+            font-weight: 500;
+            animation: fadeInDown 1s ease-out 0.4s both;
+        }
+
+        /* PHOTO SECTION */
+        .photos-section {
+            width: 100%;
+            padding: 80px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .photo-wrapper {
+            position: relative;
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        .photo-wrapper:nth-child(1) {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .photo-wrapper:nth-child(2) {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .photo-card {
+            width: 280px;
+            height: 380px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid rgba(200, 100, 150, 0.2);
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 70px rgba(139, 26, 62, 0.2);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-label {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #8b1a3e;
+            letter-spacing: 1px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* DETAILS SECTION */
+        .details {
+            width: 100%;
+            background: white;
+            padding: 100px 20px;
+            text-align: center;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.05);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .details-content {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .invitation-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8rem;
+            color: #c86496;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .details h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #8b1a3e;
+            font-weight: 700;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .decorative-line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c86496, transparent);
+            margin: 20px auto 30px;
+            animation: scaleIn 0.6s ease-out 0.4s both;
+        }
+
+        .info-block {
+            background: #fef5f0;
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .info {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #555;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #8b1a3e;
+            margin-top: 15px;
+        }
+
+        .info-label:first-child {
+            margin-top: 0;
+        }
+
+        .divider-text {
+            font-size: 0.9rem;
+            color: #999;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        /* BUTTONS/CTA */
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .btn {
+            padding: 12px 35px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn-accept {
+            background: linear-gradient(135deg, #c86496, #8b1a3e);
+            color: white;
+            box-shadow: 0 10px 30px rgba(200, 100, 150, 0.3);
+        }
+
+        .btn-accept:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(139, 26, 62, 0.4);
+        }
+
+        .btn-decline {
+            background: white;
+            color: #8b1a3e;
+            border: 2px solid #8b1a3e;
+        }
+
+        .btn-decline:hover {
+            background: #fef5f0;
+            transform: translateY(-3px);
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(200, 100, 150, 0.2);
+            font-size: 0.85rem;
+            color: #999;
+            letter-spacing: 1px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .footer-ornament {
+            font-size: 24px;
+            margin: 15px 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .names {
+                font-size: 1.8rem;
+            }
+
+            .and-symbol {
+                font-size: 1.5rem;
+                margin: 0 10px;
+            }
+
+            .hero-ornament {
+                font-size: 24px;
+            }
+
+            .invitation-title {
+                font-size: 2rem;
+            }
+
+            .details h2 {
+                font-size: 1.5rem;
+            }
+
+            .photo-card {
+                width: 260px;
+                height: 350px;
+            }
+
+            .photos-section {
+                gap: 30px;
+                padding: 60px 15px;
+            }
+
+            .details {
+                padding: 60px 15px;
+            }
+
+            .info-block {
+                padding: 30px 20px;
+            }
+
+            .hero {
+                padding: 60px 15px 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .names {
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+
+            .and-symbol {
+                font-size: 1.3rem;
+                margin: 0 8px;
+            }
+
+            .hero-ornament {
+                font-size: 20px;
+            }
+
+            .tagline {
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+            }
+
+            .invitation-title {
+                font-size: 1.6rem;
+            }
+
+            .details h2 {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+            .photo-card {
+                width: 220px;
+                height: 300px;
+            }
+
+            .photo-label {
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+
+            .photos-section {
+                gap: 20px;
+                padding: 50px 10px;
+            }
+
+            .details {
+                padding: 50px 15px;
+            }
+
+            .info-block {
+                padding: 25px 15px;
+            }
+
+            .info {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-ornament">✨</div>
+        <div class="names">Lokesh <span class="and-symbol">&</span> Varsha</div>
+        <div class="tagline">Wedding Invitation</div>
+    </section>
+
+    <section class="photos-section">
+        <div class="photo-wrapper">
+            <div class="photo-card">
+                <img src="./Lokesh.jpeg" alt="Lokesh">
+                <div class="photo-label">GROOM</div>
+            </div>
+        </div>
+        <div class="photo-wrapper">
+            <div class="photo-card">
+                <img src="./Varsha.jpeg" alt="Varsha">
+                <div class="photo-label">BRIDE</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="details">
+        <div class="details-content">
+            <div class="invitation-title">Together with their families</div>
+            
+            <div class="decorative-line"></div>
+
+            <h2>Request the honor of your presence</h2>
+
+            <div class="info-block">
+                <div class="info">
+                    <p class="divider-text">at the marriage of</p>
+                    
+                    <div class="info-label">Lokesh & Varsha</div>
+                    
+                    <p class="divider-text">on</p>
+                    
+                    <div class="info-label">Saturday, the 15th of March<br>Two thousand twenty six</div>
+                    
+                    <p class="divider-text">at seven o'clock in the evening</p>
+                    
+                    <div class="info-label">Wedding Hall Name<br>City, State</div>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <button class="btn btn-accept">Accept</button>
+                <button class="btn btn-decline">Regrets</button>
+            </div>
+
+            <div class="footer">
+                <div class="footer-ornament">💐</div>
+                <p>With blessings and love from our families</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
